@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Bugsnag: Vue.js Example</title>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="node_modules/bugsnag-js/dist/bugsnag.js"></script>
+    <script src="node_modules/bugsnag-vue/dist/bugsnag-vue.js"></script>
+    <script>
+      window.bugsnagClient = bugsnag({
+        apiKey: '19094d99b21f3a2a6f47910f9531fc83',
+        endpoint: '//localhost:8000'
+      }, [ bugsnag__vue ])
+    </script>
+  </head>
+  <style>
+    body {
+      font-family: 'Menlo', monospace; line-height: 1.7;
+      color: #444; background-color: #fafafa;
+      max-width: 600px; margin: 0 auto; padding: 20px;
+    }
+  </style>
+  <body>
+    <h1>Bugsnag: Vue.js plugin example</h1>
+
+    <!-- The HTML structure for this very basic Vue.js app -->
+    <div id="app">
+      <p>
+        <button v-on:click="triggerRenderError">Throw an error during component render()</button>
+        <span v-if="doARenderError">{{ doARenderError.non.existent.property }}</span>
+      </p>
+      <bad-button></bad-button>
+      <p>
+        <button v-on:click="triggerNextTickError">Throw an error during Vue.nextTick()</button>
+      </p>
+      <p>
+        <button v-on:click="triggerWatchError">Trigger a watch error</button>
+      </p>
+    </div>
+
+    <!-- A component that will trigger a render() error when clicked -->
+    <script type="text/x-template" id="bad-button-template">
+      <p>
+        <button v-on:click="triggerRenderError">Throw an error during component render() (child component)</button>
+        <span v-if="doARenderError">{{ doARenderError.non.existent.property }}</span>
+      </p>
+    </script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
