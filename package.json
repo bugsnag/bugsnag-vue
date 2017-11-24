@@ -35,6 +35,7 @@
     "babelify": "^8.0.0",
     "browserify": "^14.5.0",
     "bugsnag-js": "file:../bugsnag-js",
+    "standard": "^10.0.3",
     "vue": "^2.5.8"
   }
 }
