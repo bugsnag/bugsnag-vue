@@ -13,6 +13,5 @@
     "bugsnag-vue": "file:..",
     "bugsnag-js": "file:../../bugsnag-js"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }

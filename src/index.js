@@ -1,29 +1,30 @@
-const createPlugin = module.exports.createPlugin = (Vue) => ({
-  init: (client, BugsnagReport) => {
-    Vue = Vue || window.Vue
-    if (!Vue) return client._logger.warn('vue plugin did not receive a reference to Vue')
+module.exports = (Vue = window.Vue) => {
+  if (!Vue) throw new Error('cannot find Vue')
+  return {
+    init: (client) => {
+      const prev = Vue.config.errorHandler
 
-    const prev = Vue.config.errorHandler
+      const handler = (err, vm, info) => {
+        const handledState = { severity: 'error', unhandled: true, handledState: { type: 'unhandledException' } }
+        const report = new client.BugsnagReport(err.name, err.message, client.BugsnagReport.getStacktrace(err), handledState)
 
-    const handler = (err, vm, info) => {
-      const handledState = { severity: 'error', unhandled: true, handledState: { type: 'unhandledException' } }
-      const report = new BugsnagReport(err.name, err.message, BugsnagReport.getStacktrace(err), handledState)
+        report.updateMetaData('vue', {
+          errorInfo: info,
+          component: vm ? formatComponentName(vm) : undefined,
+          props: vm ? vm.$options.propsData : undefined
+        })
 
-      report.updateMetaData('vue', {
-        errorInfo: info,
-        component: vm ? formatComponentName(vm) : undefined,
-        props: vm ? vm.$options.propsData : undefined
-      })
+        client.notify(report)
+        console.error(err)
 
-      client.notify(report)
-      console.error(err)
+        if (typeof prev === 'function') prev.call(this, err, vm, info)
+      }
 
-      if (typeof prev === 'function') prev.call(this, err, vm, info)
+      Vue.config.errorHandler = handler
+      return null
     }
-
-    Vue.config.errorHandler = handler
   }
-})
+}
 
 // taken and reworked from Vue.js source
 const formatComponentName = (vm, includeFile) => {
@@ -48,5 +49,3 @@ const formatComponentName = (vm, includeFile) => {
 
 // taken and reworked from Vue.js source
 const classify = str => str.replace(/(?:^|[-_])(\w)/g, c => c.toUpperCase()).replace(/[-_]/g, '')
-
-module.exports = createPlugin(window.Vue)
