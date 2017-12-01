@@ -5,7 +5,7 @@ module.exports = (Vue = window.Vue) => {
       const prev = Vue.config.errorHandler
 
       const handler = (err, vm, info) => {
-        const handledState = { severity: 'error', unhandled: true, handledState: { type: 'unhandledException' } }
+        const handledState = { severity: 'error', unhandled: true, severityReason: { type: 'unhandledException' } }
         const report = new client.BugsnagReport(err.name, err.message, client.BugsnagReport.getStacktrace(err), handledState)
 
         report.updateMetaData('vue', {
