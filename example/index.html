@@ -6,11 +6,8 @@
     <script src="node_modules/bugsnag-js/dist/bugsnag.js"></script>
     <script src="node_modules/bugsnag-vue/dist/bugsnag-vue.js"></script>
     <script>
-      window.bugsnagClient = bugsnag({
-        apiKey: '19094d99b21f3a2a6f47910f9531fc83',
-        // endpoint: '//localhost:8000'
-      })
-      bugsnag__vue(Vue, bugsnagClient)
+      window.bugsnagClient = bugsnag('API_KEY')
+      bugsnagClient.use(bugsnag__vue(Vue))
     </script>
   </head>
   <style>

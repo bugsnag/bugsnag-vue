@@ -13,7 +13,8 @@ You can opt to install the package from npm, using the instructions below. Alter
 ### CDN
 
 ```html
-<script src="//d2wy8f7a9ursnm.cloudfront.net/bugsnag-plugins/bugsnag-vue/v1/bugsnag-vue.min.js"></script>
+<script src="//d2wy8f7a9ursnm.cloudfront.net/bugsnag/v4/bugsnag.min.js"></script>
+<script src="//d2wy8f7a9ursnm.cloudfront.net/bugsnag-plugins/v1/bugsnag-vue.min.js"></script>
 ```
 
 ### npm
@@ -39,6 +40,8 @@ The script tag creates a global function called `bugsnag__vue` which needs to be
   bugsnagClient.use(bugsnag__vue(Vue))
 </script>
 ```
+
+See the [example](example) for more info.
 
 ### Bundled
 
