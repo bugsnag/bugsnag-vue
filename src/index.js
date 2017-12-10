@@ -10,7 +10,7 @@ module.exports = (Vue = window.Vue) => {
 
         report.updateMetaData('vue', {
           errorInfo: info,
-          component: vm ? formatComponentName(vm) : undefined,
+          component: vm ? formatComponentName(vm, true) : undefined,
           props: vm ? vm.$options.propsData : undefined
         })
 
