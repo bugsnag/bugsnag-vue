@@ -48,4 +48,5 @@ const formatComponentName = (vm, includeFile) => {
 }
 
 // taken and reworked from Vue.js source
-const classify = str => str.replace(/(?:^|[-_])(\w)/g, c => c.toUpperCase()).replace(/[-_]/g, '')
+const classify = module.exports.classify = str =>
+  str.replace(/(?:^|[-_])(\w)/g, c => c.toUpperCase()).replace(/[-_]/g, '')

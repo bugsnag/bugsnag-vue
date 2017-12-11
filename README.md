@@ -1,5 +1,8 @@
 # Bugsnag: Vue
 
+[![Build Status](https://travis-ci.org/bugsnag/bugsnag-vue.svg?branch=master)](https://travis-ci.org/bugsnag/bugsnag-vue)
+[![NPM](https://img.shields.io/npm/v/bugsnag-vue.svg)](https://npmjs.org/package/bugsnag-vue)
+
 A [bugsnag-js](https://github.com/bugsnag/bugsnag-js) plugin for [Vue.js](https://vuejs.org/).
 
 This package enables you to integrate Bugsnag's error reporting with a Vue.js application at a detailed level. It creates and configures a Vue `ErrorHandler` which will capture and report unhandled errors in your app.
