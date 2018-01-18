@@ -3,12 +3,9 @@
   <head>
     <title>Bugsnag: Vue.js Example</title>
     <script src="https://unpkg.com/vue"></script>
-    <script src="node_modules/bugsnag-js/dist/bugsnag.js"></script>
-    <script src="node_modules/bugsnag-vue/dist/bugsnag-vue.js"></script>
-    <script>
-      window.bugsnagClient = bugsnag('API_KEY')
-      bugsnagClient.use(bugsnag__vue(Vue))
-    </script>
+    <!-- load bugsnag with a two simple script tags -->
+    <script src="//d2wy8f7a9ursnm.cloudfront.net/v4/bugsnag.min.js"></script>
+    <script src="//d2wy8f7a9ursnm.cloudfront.net/bugsnag-plugins/v1/bugsnag-vue.min.js"></script>
   </head>
   <style>
     body {
@@ -19,6 +16,9 @@
   </style>
   <body>
     <h1>Bugsnag: Vue.js plugin example</h1>
+    <p>This page is a basic example of how to include vue on a page via a
+      <code>&lt;script&gt;</code> tag.
+    </p>
 
     <!-- The HTML structure for this very basic Vue.js app -->
     <div id="app">
@@ -31,7 +31,7 @@
         <button v-on:click="triggerNextTickError">Throw an error during Vue.nextTick()</button>
       </p>
       <p>
-        <button v-on:click="triggerWatchError">Trigger a watch error</button>
+        <button v-on:click="triggerWatchError">Trigger a handled watch error</button>
       </p>
     </div>
 
@@ -42,7 +42,7 @@
         <span v-if="doARenderError">{{ doARenderError.non.existent.property }}</span>
       </p>
     </script>
-
+    <!-- in app.js you'll find further syntax and configuration examples. -->
     <script src="app.js"></script>
   </body>
 </html>
