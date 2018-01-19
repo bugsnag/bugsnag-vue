@@ -50,9 +50,8 @@ const bugsnagClient = bugsnag({
     maxEvents: 50
 })
 
+// attach the Vue plugin to your bugsnag-js client
 bugsnagClient.use(bugsnag__vue(Vue))
-
-
 
 
 // Define the <bad-button/> component
@@ -103,6 +102,7 @@ var app = new Vue({
     // component to throw an error (due to referencing a property
     // of an object that doesn't exist)
     triggerRenderError: function () {
+      console.log('an unhandled error has been reported to your Bugsnag dashboard')
       this.doARenderError = true
       setTimeout(function () {
         this.doARenderError = false
@@ -110,12 +110,14 @@ var app = new Vue({
     },
     // Throws an error using Vue.js's nextTick() function
     triggerNextTickError: function () {
+      console.log('an unhandled error has been reported to your Bugsnag dashboard')
       Vue.nextTick(function () {
         JSON.parse('definitely not json')
       })
     },
     // Changes the value being watched such that it throws an error
     triggerWatchError: function () {
+      console.log('an unhandled error has been reported to your Bugsnag dashboard')
       this.doAWatchError = true
       setTimeout(function () {
         this.doAWatchError = false
