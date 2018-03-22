@@ -5,7 +5,7 @@ This example shows how you can use the Bugsnag JavaScript notifier with
 
 Whilst the notifier reports any errors that are uncaught, there are certain types
 of error specific to Vue.js that get swallowed by its own error handler. The example
-shown here shows how to use the `bugsnag-vue` plugin to this work for you.
+shown here shows how to use the `bugsnag-vue` plugin to work for you.
 
 ## Setup
 
@@ -28,7 +28,7 @@ API token with your own!
     ```sh
     yarn
     ```
-1. Replace the `API_KEY` placeholder in [index.html](index.html) with your actual API key.
+1. Replace the `API_KEY` placeholder in [app.js](app.js) with your actual API key.
 1. Start a web server:
     ```sh
     npm start
