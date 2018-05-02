@@ -44,7 +44,7 @@ The script tag creates a global function called `bugsnag__vue` which needs to be
 </script>
 ```
 
-See the [example](example) for more info.
+See the [examples](examples) for more info.
 
 ### Bundled
 

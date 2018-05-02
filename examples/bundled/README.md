@@ -1,11 +1,11 @@
-# Bugsnag: Vue.js Example
+# Bugsnag: Vue.js bundled example
 
 This example shows how you can use the Bugsnag JavaScript notifier with
-[Vue.js](https://vuejs.org/).
+[Vue.js](https://vuejs.org/) that has a build step. Beyond the features shown in
+the [basic example](../basic), this setup shows how to initialize a `bugsnagClient` in a module
+that you can reuse in various parts of your application.
 
-Whilst the notifier reports any errors that are uncaught, there are certain types
-of error specific to Vue.js that get swallowed by its own error handler. The example
-shown here shows how to use the `bugsnag-vue` plugin to this work for you.
+This application was generated with [vue-cli](https://github.com/vuejs/vue-cli).
 
 ## Setup
 
@@ -19,7 +19,7 @@ API token with your own!
 1. Clone the repo and `cd` into this directory:
     ```sh
     git clone git@github.com:bugsnag/bugsnag-vue.git
-    cd bugsnag-vue/example
+    cd bugsnag-vue/examples/bundled
     ```
 1. Install the dependencies (with either npm or yarn):
     ```sh
@@ -28,9 +28,9 @@ API token with your own!
     ```sh
     yarn
     ```
-1. Replace the `API_KEY` placeholder in [index.html](index.html) with your actual API key.
-1. Start a web server:
+1. Replace the `API_KEY` placeholder in [src/lib/bugsnag.js](src/lib/bugsnag.js) with your actual API key.
+1. Start the bundler and web server:
     ```sh
-    npm start
+    npm run serve
     ```
-1. View the example page which will (most likely) be served at: http://localhost:5000/
+1. View the example page which will (most likely) be served at: http://localhost:8080/
