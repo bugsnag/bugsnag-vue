@@ -37,7 +37,7 @@ export default {
     click: function () {
       this.clicks += 1
       if (this.clicks === 10) {
-        bugsnagClient(new Error('user clicked button too many times!'), { severity: 'info' })
+        bugsnagClient.notify(new Error('user clicked button too many times!'), { severity: 'info' })
       }
     }
   }
