@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <p>This example shows how to initialize the <code>bugsnagClient</code> once and import<br/>it invarious parts of your application to report your own errors to Bugsnag.</p>
+    <p>This example shows how to initialize the <code>bugsnagClient</code> once and import<br/>it in various parts of your application to report your own errors to Bugsnag.</p>
 
     <h3>Use case: notifying Bugsnag of a handled error</h3>
     <p>Example: we try to parse some user-provided JSON which we know might fail</p>
