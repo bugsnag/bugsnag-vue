@@ -16,7 +16,7 @@ You can opt to install the package from npm, using the instructions below. Alter
 ### CDN
 
 ```html
-<script src="//d2wy8f7a9ursnm.cloudfront.net/bugsnag/v4/bugsnag.min.js"></script>
+<script src="//d2wy8f7a9ursnm.cloudfront.net/v4/bugsnag.min.js"></script>
 <script src="//d2wy8f7a9ursnm.cloudfront.net/bugsnag-plugins/v1/bugsnag-vue.min.js"></script>
 ```
 
@@ -62,8 +62,8 @@ bugsnagClient.use(bugsnagVue(Vue))
 ## Support
 
 * Check out the [documentation](https://docs.bugsnag.com/platforms/browsers/)
-* [Search open and closed issues](https://github.com/bugsnag/bugsnag-react/issues?q=is%3Aissue) for similar problems
-* [Report a bug or request a feature](https://github.com/bugsnag/bugsnag-react/issues/new)
+* [Search open and closed issues](https://github.com/bugsnag/bugsnag-vue/issues?q=is%3Aissue) for similar problems
+* [Report a bug or request a feature](https://github.com/bugsnag/bugsnag-vue/issues/new)
 
 ## License
 
