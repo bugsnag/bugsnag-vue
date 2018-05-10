@@ -62,8 +62,8 @@ bugsnagClient.use(bugsnagVue(Vue))
 ## Support
 
 * Check out the [documentation](https://docs.bugsnag.com/platforms/browsers/)
-* [Search open and closed issues](https://github.com/bugsnag/bugsnag-react/issues?q=is%3Aissue) for similar problems
-* [Report a bug or request a feature](https://github.com/bugsnag/bugsnag-react/issues/new)
+* [Search open and closed issues](https://github.com/bugsnag/bugsnag-vue/issues?q=is%3Aissue) for similar problems
+* [Report a bug or request a feature](https://github.com/bugsnag/bugsnag-vue/issues/new)
 
 ## License
 
