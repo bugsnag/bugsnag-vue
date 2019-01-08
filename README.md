@@ -2,7 +2,7 @@
 
 We upgraded our Vue support in the latest all-in-one javascript notifier package. Check out the [blog post](https://blog.bugsnag.com/bugsnag-universal-js/) for more info.
 
-All projects should **upgrade to our universal JS notifier:** [@bugsnag/js](https://github.com/bugsnag/bugsnag-js) and use the new version of the react plugin: [@bugsnag/plugin-vue](https://github.com/bugsnag/bugsnag-js/blob/master/packages/plugin-vue). See the [upgrade guide](https://github.com/bugsnag/bugsnag-js/blob/master/UPGRADING.md) for details on how to upgrade.
+All projects should **upgrade to our universal JS notifier:** [@bugsnag/js](https://github.com/bugsnag/bugsnag-js) and use the new version of the Vue plugin: [@bugsnag/plugin-vue](https://github.com/bugsnag/bugsnag-js/blob/master/packages/plugin-vue). See the [upgrade guide](https://github.com/bugsnag/bugsnag-js/blob/master/UPGRADING.md) for details on how to upgrade.
 
 This package is now deprecated, but will continue to exist on the npm registry and work with Bugsnag's API for the foreseeable future. However, it will no longer receive updates unless they are critical.
 
